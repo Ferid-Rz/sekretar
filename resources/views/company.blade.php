@@ -5,8 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
+
+    <form action="/add-to-slider" method='post' enctype="multipart/form-data">
+    @csrf
+        <h3 for="cars">Slidere shekil elave ele:</h3>
+        <input type="file" id="img" name="img1" accept="image/*">
+        <input type="file" id="img" name="img2" accept="image/*">
+        <input type="file" id="img" name="img3" accept="image/*">
+        <input type="submit" value='tesdiq'>
+        <br>
+        
+    </form>
+    <br>
+
+    <form action="/delete-slider" method='post' enctype="multipart/form-data">
+    @csrf
+        <h3 for="cars">Slider shekilleri:</h3>
+        @foreach($slider as $data)
+        <img src="{{URL::asset('/images/slider')}}/{{ $data['image_filename']}}" alt="profile Pic" height="100" width="200">
+        <button name="delete_slide" value="{{ $data['id']}}">sil</button>
+        <!-- <br> -->
+        @endforeach
+        <!-- <input type="submit" value='tesdiq'> -->
+        <br>
+        
+    </form>
+    <br>
+
+
     <form action="/add-service" method='post'>
     @csrf
         <h3 for="cars">Uygun kateqoriaya gore servis elave ele:</h3>
@@ -49,8 +78,59 @@
         <br>
 
         <label for="img">Select image:</label>
-        <input type="file" id="img" name="img" accept="image/*" required>
+        <input type="file" id="img" name="img" accept="image/*" >
         <br>
+        
+
+        <label for="img">1ci gun:</label>
+        <input name="start1" type="number"   min="09" max="24" value='09' required>
+        <input name="end1" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day1" value="true">
+        <br>
+
+        <label for="img">2ci gun:</label>
+        <input name="start2" type="number"   min="09" max="24" value='09' required>
+        <input name="end2" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day2" value="true">
+        <br>
+
+        <label for="img">3cu gun:</label>
+        <input name="start3" type="number"   min="09" max="24" value='09' required>
+        <input name="end3" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day3" value="true">
+        <br>
+
+        <label for="img">4cu gun:</label>
+        <input name="start4" type="number"   min="09" max="24" value='09' required>
+        <input name="end4" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day4" value="true">
+        <br>
+
+        <label for="img">5ci gun:</label>
+        <input name="start5" type="number"   min="09" max="24" value='09' required>
+        <input name="end5" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day5" value="true">
+        <br>
+
+        <label for="img">6ci gun:</label>
+        <input name="start6" type="number"   min="09" max="24" value='09' required>
+        <input name="end6" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day6" value="true">
+        <br>
+
+        <label for="img">7ci gun:</label>
+        <input name="start7" type="number"   min="09" max="24" value='09' required>
+        <input name="end7" type="number"   min="09" max="24" value='24' required>
+        <label> Ishlemir:</label>
+        <input type="checkbox" name="day7" value="true">
+        <br>
+
         <input type="submit" value='tesdiq'>
     </form>
 

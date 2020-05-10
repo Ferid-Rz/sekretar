@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CompanyImage extends Model
+class StaffBooking extends Model
 {
-    protected $table = 'company_images';
+    protected $table = 'staff_book';
     protected $guarded = [];
     public $timestamps = false;
 }
