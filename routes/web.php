@@ -35,4 +35,6 @@ Route::get('/company/{id}', 'ClientController@company')->name('client');
 Route::post('/add-to-slider', 'CompanyController@addSlider')->middleware('auth');;
 Route::post('/delete-slider', 'CompanyController@deleteSlider')->middleware('auth');;
 
-Route::post('/show-masters', 'ClientController@showMasters');
+Route::post('/show-services', 'StaffController@showServices');
+
+Route::get('/test', 'StaffController@test');

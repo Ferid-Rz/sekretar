@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CompanyStaff extends Model
+class StaffService extends Model
 {
-    protected $table = 'company_staff';
+    protected $table = 'staff_services';
     protected $guarded = [];
     public $timestamps = false;
 
     public function service()
     {    
-        return $this->belongsTo('App\Models\StaffService', 'id','staff_id');
+        return $this->belongsTo('App\Models\Service', 'service_id','id');
     }
 }

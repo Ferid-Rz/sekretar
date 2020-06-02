@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\CompanyStaff;
 // use App\Models\CompanyImage;
 use App\Models\CompanyService;
+use App\Models\StaffService;
 use App\Models\Service;
 use App\User;
 
@@ -29,7 +30,8 @@ class ClientController extends Controller
         // $company = User::where('id',$id)->with('slider')->get();
         // echo $company;
         // die();
-        $company_services = CompanyService::where('company_id',$id)->with('service')->get();
+        $company_services = CompanyStaff::where('company_id',$id)->with('service')->get();
+        
         
         return view('company-spesific',compact('company','company_services'));
     }
